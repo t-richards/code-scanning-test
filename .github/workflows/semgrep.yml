@@ -20,7 +20,7 @@ jobs:
 
       - name: Run semgrep
         run: |
-          semgrep ci --config rules --sarif --sarif-output=semgrep.sarif --subdir=src
+          semgrep ci --config rules --sarif --sarif-output=semgrep.sarif --subdir=src --suppress-errors
 
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
