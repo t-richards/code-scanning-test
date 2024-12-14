@@ -8,7 +8,7 @@ rules:
     - pattern: jQuery(...).$METHOD(...)
   message: "jQuery usage detected"
   languages: [javascript]
-  severity: WARNING
+  severity: INFO
   metadata:
     category: institutional-patterns
     technology: jquery

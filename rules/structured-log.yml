@@ -15,7 +15,7 @@ rules:
         pattern: $STRING
   message: "Prefer structured logging with additional arguments"
   languages: [ruby]
-  severity: WARNING
+  severity: INFO
   metadata:
     category: institutional-patterns
     technology: rails
