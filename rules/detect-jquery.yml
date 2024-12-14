@@ -1,0 +1,14 @@
+rules:
+- id: detect-jquery
+  patterns:
+  - pattern-either:
+    - pattern: $.$METHOD(...)
+    - pattern: $(...).$METHOD(...)
+    - pattern: jQuery.$METHOD(...)
+    - pattern: jQuery(...).$METHOD(...)
+  message: "jQuery usage detected"
+  languages: [javascript]
+  severity: WARNING
+  metadata:
+    category: institutional-patterns
+    technology: jquery

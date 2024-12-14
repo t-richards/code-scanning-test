@@ -1,0 +1,21 @@
+rules:
+- id: structured-log
+  patterns:
+    - pattern: $LOGGER.$METHOD($VALUE)
+    - metavariable-pattern:
+        metavariable: $LOGGER
+        pattern-either:
+          - pattern: Rails.logger
+          - pattern: logger
+    - metavariable-regex:
+        metavariable: $METHOD
+        regex: (info|debug|warn|error|fatal)
+    - metavariable-pattern:
+        metavariable: $VALUE
+        pattern: $STRING
+  message: "Prefer structured logging with additional arguments"
+  languages: [ruby]
+  severity: WARNING
+  metadata:
+    category: institutional-patterns
+    technology: rails
